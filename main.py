@@ -1,4 +1,4 @@
-from pyspark.sql import Sparkspark
+from pyspark.sql import SparkSession
 from queries import q1, q2, q3, q4, q5
 import os, sys, time
 
@@ -8,7 +8,7 @@ os.environ['PYSPARK_DRIVER_PYTHON'] = sys.executable
 
 
 def startUp():
-    spark = Sparkspark.builder.master("spark://192.168.0.1:7077").appName("ADVDB_Project").getOrCreate()
+    spark = SparkSession.builder.master("spark://192.168.0.1:7077").appName("ADVDB_Project").getOrCreate()
     return spark
 
 
